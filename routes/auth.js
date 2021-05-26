@@ -11,24 +11,24 @@ const schema = {
 
 router.post('/register', async (req, res)=>{
     //lets validate user
-    // const validation = Joi.validate(req.body, schema)
-    // res.send(validation)
-    // console.log(validation);
-    const user = new User({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password
+    const validation = Joi.validate(req.body, schema)
+    res.send(validation)
+    console.log(validation);
+    // const user = new User({
+    //     name: req.body.name,
+    //     email: req.body.email,
+    //     password: req.body.password
 
-    });
-    // console.log('user', user);
-    try {
-        const savedUser = await user.save();
-        console.log(`saved User: ${savedUser}`);
-        res.send(savedUser);
+    // });
+    // // console.log('user', user);
+    // try {
+    //     const savedUser = await user.save();
+    //     console.log(`saved User: ${savedUser}`);
+    //     res.send(savedUser);
         
-    } catch (error) {
-        res.status(400).send(error)
-    }
+    // } catch (error) {
+    //     res.status(400).send(error)
+    // }
 })
 
 module.exports = router;
