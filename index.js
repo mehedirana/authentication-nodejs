@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 //import routes
 const authRoute = require("./routes/auth");
 
+
 dotenv.config();
 
 
